@@ -1,0 +1,17 @@
+.container {
+  max-width: 1024px;
+  background-color: rgb(250, 238, 221);
+  margin: auto;
+  height: 100vh;
+  padding: 20px;
+}
+
+.navigationContainer {
+  padding: 10px;
+}
+
+.header {
+  text-align: center;
+  padding-top: 30px;
+  color: rgb(17, 110, 218);
+}
