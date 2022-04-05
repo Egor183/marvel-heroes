@@ -1,0 +1,1 @@
+export const LOAD_MARVEL_HEROES = "LOAD_MARVEL_HEROES";

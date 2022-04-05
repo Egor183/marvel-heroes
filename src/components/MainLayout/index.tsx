@@ -1,8 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import Link from "next/link";
-import { MainLayoutType } from "../../types/mainLayout.type";
-
+import { MainLayoutType } from "types/mainLayout.type";
 import styles from "./styles.module.css";
 
 export const MainLayout: React.FC<MainLayoutType> = ({ children, title }) => {
