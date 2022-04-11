@@ -1,0 +1,11 @@
+.imageWrapper {
+  margin-top: 30px;
+  display: block;
+  position: relative;
+  height: min-content;
+  width: max-content;
+}
+
+.marginTop {
+  margin-top: 30px;
+}

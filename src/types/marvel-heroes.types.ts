@@ -1,6 +1,6 @@
 export type MarvelHeroType = {
   name: string;
-  avatar: string;
+  src: string;
   description: string;
 };
 
@@ -9,6 +9,10 @@ export type MarvelHeroRenderItemType = {
   name: string;
   description: string;
   thumbnail: { path: string; extension: string };
+};
+
+export type MarvelHeroPageType = {
+  heroId?: number;
 };
 
 export type MarvelHeroesTypeList = MarvelHeroType[];

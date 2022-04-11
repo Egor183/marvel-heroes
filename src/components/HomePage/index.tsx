@@ -1,12 +1,14 @@
-import React from "react";
-import { IMAGE_RESOLUTIONS } from "constants/global.constants";
+import React, { memo } from "react";
+import Link from "next/link";
+import { IMAGE_RESOLUTIONS } from "constants/avatar.constants";
 import { useMarvelHeroes } from "hooks/useMarvelHeroes";
 import { MarvelHeroRenderItemType } from "types/marvel-heroes.types";
 import MainLayout from "components/MainLayout";
-import Hero from "../Hero";
-import Link from "next/link";
+import { createSrc } from "helpers/avatar.helpers";
 
-export const Home = () => {
+import Hero from "../Hero";
+
+const Home = () => {
   const { marvelHeroes } = useMarvelHeroes();
 
   return (
@@ -18,7 +20,10 @@ export const Home = () => {
               <Hero
                 name={item.name}
                 description={item.description}
-                src={`${item.thumbnail.path}/${IMAGE_RESOLUTIONS.STANDARD_LARGE}.${item.thumbnail.extension}`}
+                src={createSrc(
+                  item.thumbnail,
+                  IMAGE_RESOLUTIONS.STANDARD_LARGE
+                )}
               />
             </a>
           </Link>
@@ -27,3 +32,5 @@ export const Home = () => {
     </MainLayout>
   );
 };
+
+export default memo(Home);

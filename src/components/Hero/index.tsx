@@ -1,37 +1,28 @@
-import Image from "next/image";
-import React, { memo, useCallback } from "react";
-import avatar from "assets/avatar.png";
-import { IMAGE_RESOLUTIONS, IMAGE_SIZES } from "constants/global.constants";
+import React, { memo } from "react";
+import { IMAGE_RESOLUTIONS, IMAGE_SIZES } from "constants/avatar.constants";
+import { NO_DESCRIPTION } from "constants/global.constants";
+import { MarvelHeroType } from "types/marvel-heroes.types";
+import Avatar from "components/Avatar";
+
 import styles from "./styles.module.css";
 
-const Hero = ({
-  src,
-  name,
-  description,
-}: {
-  src: string;
-  name: string;
-  description: string;
-}) => {
-  const handleLoader = useCallback(() => src, [src]);
-
+const Hero: React.FC<MarvelHeroType> = ({ src, name, description }) => {
   return (
     <div className={styles.container}>
       <div className={styles.imageWrapper}>
         {
-          <Image
-            src={src || avatar}
+          <Avatar
+            src={src}
             alt={name}
             width={IMAGE_SIZES[IMAGE_RESOLUTIONS.STANDARD_LARGE]}
-            height={100}
-            loader={src ? handleLoader : undefined}
+            height={IMAGE_SIZES[IMAGE_RESOLUTIONS.STANDARD_LARGE]}
             style={{ borderRadius: "50%" }}
           />
         }
       </div>
       <div className={styles.heroInformation}>
         <h3>{name}</h3>
-        <p>{description ? description : "No description."}</p>
+        <p>{description ? description : NO_DESCRIPTION}</p>
       </div>
     </div>
   );

@@ -1,10 +1,11 @@
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
+import Hero from "components/HeroPage";
 
-const Hero: NextPage = () => {
+const HeroPage: NextPage = () => {
   const router = useRouter();
 
-  return <div>{router.query.id}</div>;
+  return <Hero heroId={Number(router.query.id)} />;
 };
 
-export default Hero;
+export default HeroPage;
