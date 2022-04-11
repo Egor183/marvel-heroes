@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import { MainLayoutType } from "types/mainLayout.types";
+import { MainLayoutType } from "types/main-layout.types";
 import styles from "./styles.module.css";
 
 const MainLayout: React.FC<MainLayoutType> = ({ children, title }) => {
