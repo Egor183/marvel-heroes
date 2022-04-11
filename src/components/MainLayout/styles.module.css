@@ -2,7 +2,7 @@
   max-width: 1024px;
   background-color: rgb(250, 238, 221);
   margin: auto;
-  height: 100vh;
+  min-height: 100vh;
   padding: 20px;
 }
 

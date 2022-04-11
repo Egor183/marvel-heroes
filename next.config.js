@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-}
+  // reactStrictMode: true,   //DISABLED FOR DEVELOPER MODE
+  domains: ["i.annihil.us"],
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

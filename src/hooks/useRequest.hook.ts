@@ -1,4 +1,3 @@
-import { AxiosInstance } from "axios";
 import { useCallback } from "react";
 import { useDispatch } from "react-redux";
 import { setLoading } from "redux/actions/loading.actions";
@@ -23,7 +22,6 @@ export const useRequest = () => {
         return data;
       } catch (e: any) {
         dispatch(setError(true));
-        throw e;
       } finally {
         dispatch(setLoading(false));
       }

@@ -1,26 +1,25 @@
-import React, { useEffect } from "react";
-import { API_METHODS, API_ROUTES } from "constants/api.constants";
-import { useRequest } from "hooks/useRequest.hook";
-import { MainLayout } from "../MainLayout";
+import React from "react";
+import { IMAGE_RESOLUTIONS } from "constants/global.constants";
+import { useMarvelHeroes } from "hooks/useMarvelHeroes";
+import { MarvelHeroRenderItemType } from "types/marvel-heroes.types";
+import MainLayout from "components/MainLayout";
+import Hero from "../Hero";
 
 export const Home = () => {
-  const request = useRequest();
-
-  useEffect(() => {
-    (async () => {
-      const { data } = await request(
-        API_ROUTES.MARVEL_HEROES,
-        API_METHODS.GET,
-        {
-          offset: 1,
-        }
-      );
-    })();
-  }, [request]);
+  const { marvelHeroes } = useMarvelHeroes();
 
   return (
     <MainLayout title="Marvel heroes">
-      <div />
+      <div>
+        {marvelHeroes.map((item: MarvelHeroRenderItemType) => (
+          <Hero
+            key={item.id}
+            name={item.name}
+            description={item.description}
+            src={`${item.thumbnail.path}/${IMAGE_RESOLUTIONS.STANDARD_LARGE}.${item.thumbnail.extension}`}
+          />
+        ))}
+      </div>
     </MainLayout>
   );
 };

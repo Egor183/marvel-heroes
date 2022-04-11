@@ -1,10 +1,10 @@
-import React from "react";
+import React, { memo } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { MainLayoutType } from "types/mainLayout.types";
 import styles from "./styles.module.css";
 
-export const MainLayout: React.FC<MainLayoutType> = ({ children, title }) => {
+const MainLayout: React.FC<MainLayoutType> = ({ children, title }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -23,3 +23,5 @@ export const MainLayout: React.FC<MainLayoutType> = ({ children, title }) => {
     </div>
   );
 };
+
+export default memo(MainLayout);
