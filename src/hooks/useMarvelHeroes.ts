@@ -11,15 +11,23 @@ export const useMarvelHeroes = () => {
   const marvelHeroes = useSelector(selectMarvelHeroes);
 
   const getMarvelHeroes = useCallback(async () => {
-    const { data } = await request(API_ROUTES.MARVEL_HEROES, API_METHODS.GET, {
-      offset: marvelHeroes.length,
-    });
+    try {
+      const { data } = await request(
+        API_ROUTES.MARVEL_HEROES,
+        API_METHODS.GET,
+        {
+          offset: marvelHeroes.length,
+        }
+      );
 
-    if (!data?.data?.results) {
-      return;
+      if (!data?.data?.results) {
+        return;
+      }
+
+      dispatch(loadMarvelHeroes(data.data.results));
+    } catch (e) {
+      //
     }
-
-    dispatch(loadMarvelHeroes(data.data.results));
   }, [dispatch, request, marvelHeroes.length]);
 
   useEffect(() => {
