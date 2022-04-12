@@ -5,3 +5,8 @@
   flex-direction: column;
   margin-top: 20vh;
 }
+
+.contentContainer {
+  overflow-y: auto;
+  height: 100%;
+}

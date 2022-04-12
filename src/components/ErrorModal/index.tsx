@@ -9,12 +9,7 @@ const ErrorModal = () => {
   const hasError = useSelector(selectErrorState);
 
   return (
-    <Modal
-      basic
-      open={hasError}
-      size="small"
-      trigger={<Button>Basic Modal</Button>}
-    >
+    <Modal basic open={hasError} size="small">
       <Header icon>
         <Icon name="exclamation triangle" />
         <h1>Something went wrong ...</h1>

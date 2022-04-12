@@ -2,12 +2,20 @@
   max-width: 1024px;
   background-color: rgb(250, 238, 221);
   margin: auto;
-  min-height: 100vh;
+}
+
+.headerContainer {
+  height: 20vh;
   padding: 20px;
 }
 
 .navigationContainer {
   padding: 10px;
+}
+
+.mainContainer {
+  height: 80vh;
+  padding: 20px;
 }
 
 .header {
