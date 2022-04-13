@@ -11,3 +11,9 @@ export type InitialStateErrorReducerType = {
 export type InitialStateLoadingReducerType = {
   isLoading: boolean;
 };
+
+export type InitialStateSearchReducerType = {
+  loading: boolean;
+  results: MarvelHeroesTypeList;
+  value: string;
+};

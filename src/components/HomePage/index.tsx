@@ -8,6 +8,7 @@ import { useHandleScroll } from "hooks/useHandleScroll.hook";
 import { MarvelHeroRenderItemType } from "types/marvel-heroes.types";
 import MainLayout from "components/MainLayout";
 import Loader from "components/Loader";
+import Search from "components/Search";
 import { createSrc } from "helpers/avatar.helpers";
 import Hero from "../Hero";
 
@@ -19,7 +20,7 @@ const Home = () => {
   const { scrollRef, handleScroll } = useHandleScroll(getMarvelHeroes);
 
   return (
-    <MainLayout title="Marvel heroes">
+    <MainLayout title="Marvel heroes" HeaderComponent={<Search />}>
       {isLoading ? (
         <div className={styles.loaderContainer}>
           <Loader />

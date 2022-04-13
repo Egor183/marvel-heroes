@@ -20,6 +20,13 @@
 
 .header {
   text-align: center;
-  padding-top: 30px;
+  padding-top: 20px;
   color: rgb(17, 110, 218);
+}
+
+.navWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }

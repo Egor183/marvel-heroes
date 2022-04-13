@@ -10,3 +10,8 @@ export type ErrorActionType = BasicActionType<boolean>;
 export type LoadingActionType = BasicActionType<boolean>;
 
 export type MarvelHeroesActionType = BasicActionType<MarvelHeroesTypeList>;
+
+export type SearchActionType = BasicActionType<{
+  value: string;
+  results: MarvelHeroesTypeList;
+}>;

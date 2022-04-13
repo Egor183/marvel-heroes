@@ -3,8 +3,13 @@ import Head from "next/head";
 import Link from "next/link";
 import { MainLayoutType } from "types/main-layout.types";
 import styles from "./styles.module.css";
+import Search from "components/Search";
 
-const MainLayout: React.FC<MainLayoutType> = ({ children, title }) => {
+const MainLayout: React.FC<MainLayoutType> = ({
+  children,
+  title,
+  HeaderComponent,
+}) => {
   return (
     <div className={styles.container}>
       <div className={styles.headerContainer}>
@@ -14,11 +19,14 @@ const MainLayout: React.FC<MainLayoutType> = ({ children, title }) => {
           <meta name="description" content="this is list of marvel heroes" />
           <meta charSet="utf-8" />
         </Head>
-        <nav className={styles.navigationContainer}>
-          <Link href={"/"}>
-            <a>Home</a>
-          </Link>
-        </nav>
+        <div className={styles.navWrapper}>
+          <nav className={styles.navigationContainer}>
+            <Link href={"/"}>
+              <a>Home</a>
+            </Link>
+          </nav>
+          {HeaderComponent}
+        </div>
         <h1 className={styles.header}>{title}</h1>
       </div>
       <main>
