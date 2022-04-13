@@ -3,6 +3,7 @@
   position: relative;
   height: min-content;
   width: max-content;
+  margin-bottom: 15px;
 }
 
 .marginTop {
@@ -13,8 +14,23 @@
   margin-bottom: 0;
 }
 
+.contentContainer {
+  overflow-y: auto;
+  height: 100%;
+  padding-left: 15px;
+}
+
+.description {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
 @media (max-width: 400px) {
   .name {
+    font-size: 16px;
+  }
+
+  .description {
     font-size: 16px;
   }
 }

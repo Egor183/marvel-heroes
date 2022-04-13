@@ -1,0 +1,11 @@
+.listName {
+  margin-top: 15px;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 400px) {
+  .listName {
+    font-size: 16px;
+  }
+}
