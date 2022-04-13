@@ -4,6 +4,7 @@ import MainLayout from "components/MainLayout";
 import Avatar from "components/Avatar";
 import { IMAGE_RESOLUTIONS, IMAGE_SIZES } from "constants/avatar.constants";
 import { NO_DESCRIPTION } from "constants/global.constants";
+import cn from "classnames";
 import { selectMarvelHero } from "redux/selectors/marvel-heroes.selectors";
 import { MarvelHeroPageType } from "types/marvel-heroes.types";
 import { createSrc } from "helpers/avatar.helpers";
@@ -19,8 +20,8 @@ const Hero: React.FC<MarvelHeroPageType> = ({ heroId }) => {
 
   return (
     <MainLayout title="Marvel hero">
-      <h3 className={styles.marginTop}>{hero.name}</h3>
-      <div className={styles.imageWrapper}>
+      <h3 className={cn(styles.name, styles.marginTop)}>{hero.name}</h3>
+      <div className={cn(styles.imageWrapper, styles.marginTop)}>
         {
           <Avatar
             src={createSrc(

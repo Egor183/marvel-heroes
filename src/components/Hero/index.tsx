@@ -21,7 +21,7 @@ const Hero: React.FC<MarvelHeroType> = ({ src, name, description }) => {
         }
       </div>
       <div className={styles.heroInformation}>
-        <h3>{name}</h3>
+        <h3 className={styles.name}>{name}</h3>
         <p>{description ? description : NO_DESCRIPTION}</p>
       </div>
     </div>

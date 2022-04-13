@@ -1,5 +1,4 @@
 .imageWrapper {
-  margin-top: 30px;
   display: block;
   position: relative;
   height: min-content;
@@ -7,5 +6,15 @@
 }
 
 .marginTop {
-  margin-top: 30px;
+  margin-top: 15px;
+}
+
+.name {
+  margin-bottom: 0;
+}
+
+@media (max-width: 400px) {
+  .name {
+    font-size: 16px;
+  }
 }

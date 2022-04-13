@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .imageWrapper {
@@ -13,4 +13,14 @@
 
 .heroInformation {
   width: 90%;
+}
+
+.name {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 400px) {
+  .name {
+    font-size: 16px;
+  }
 }

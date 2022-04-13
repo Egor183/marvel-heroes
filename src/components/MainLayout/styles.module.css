@@ -5,23 +5,22 @@
 }
 
 .headerContainer {
-  height: 20vh;
-  padding: 20px;
-}
-
-.navigationContainer {
-  padding: 10px;
+  height: 10vh;
 }
 
 .mainContainer {
-  height: 80vh;
-  padding: 20px;
+  height: 90vh;
+}
+
+.padding {
+  padding: 15px;
 }
 
 .header {
   text-align: center;
-  padding-top: 20px;
+  padding-top: 10px;
   color: rgb(17, 110, 218);
+  margin: 0;
 }
 
 .navWrapper {
@@ -29,4 +28,30 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+@media (max-width: 400px) {
+  .header {
+    font-size: 18px;
+  }
+}
+
+@media (max-height: 740px) {
+  .headerContainer {
+    height: 12vh;
+  }
+
+  .mainContainer {
+    height: 88vh;
+  }
+}
+
+@media (max-height: 650px) {
+  .headerContainer {
+    height: 15vh;
+  }
+
+  .mainContainer {
+    height: 85vh;
+  }
 }
