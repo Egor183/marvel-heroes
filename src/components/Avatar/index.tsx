@@ -3,7 +3,10 @@ import React, { memo, useCallback } from "react";
 import avatar from "assets/avatar.png";
 
 const Avatar: React.FC<ImageProps> = ({ src, alt, width, height, style }) => {
-  const handleLoader = useCallback(() => src as string, [src]);
+  const handleLoader = useCallback(
+    () => `${src}?w=${width}` as string,
+    [src, width]
+  );
 
   return (
     <Image

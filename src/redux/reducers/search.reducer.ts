@@ -1,5 +1,4 @@
 import {
-  CLEAN_VALUE,
   FINISH_SEARCH,
   START_SEARCH,
 } from "redux/action-types/search.action-types";
@@ -17,12 +16,11 @@ export const searchReducer = (
   action: SearchActionType
 ) => {
   switch (action.type) {
-    case CLEAN_VALUE:
-      return initialState;
     case START_SEARCH:
-      return { ...state, loading: true, value: action.payload.value };
+      return { ...state, loading: true, value: action.payload };
+
     case FINISH_SEARCH:
-      return { ...state, loading: false, results: action.payload.results };
+      return { ...state, loading: false, results: action.payload };
 
     default:
       return state;

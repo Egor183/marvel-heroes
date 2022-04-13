@@ -11,7 +11,4 @@ export type LoadingActionType = BasicActionType<boolean>;
 
 export type MarvelHeroesActionType = BasicActionType<MarvelHeroesTypeList>;
 
-export type SearchActionType = BasicActionType<{
-  value: string;
-  results: MarvelHeroesTypeList;
-}>;
+export type SearchActionType = BasicActionType<string | MarvelHeroesTypeList>;
