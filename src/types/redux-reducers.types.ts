@@ -16,4 +16,5 @@ export type InitialStateSearchReducerType = {
   loading: boolean;
   results: MarvelHeroesTypeList;
   value: string;
+  isRequestAvailable: boolean;
 };

@@ -3,7 +3,11 @@ import _ from "lodash";
 import { useDispatch, useSelector } from "react-redux";
 import { selectSearchState } from "redux/selectors/search.selectors";
 import { Search as SearchComponent } from "semantic-ui-react";
-import { finishSearch, startSearch } from "redux/actions/search.actions";
+import {
+  finishSearch,
+  handleRequest,
+  startSearch,
+} from "redux/actions/search.actions";
 import { SearchType } from "types/search.types.";
 
 const Search: React.FC<SearchType> = ({ source, filterField }) => {
@@ -15,10 +19,12 @@ const Search: React.FC<SearchType> = ({ source, filterField }) => {
     (e, data) => {
       clearTimeout(timeoutRef.current);
       dispatch(startSearch(data.value));
+      dispatch(handleRequest(false));
 
       timeoutRef.current = window.setTimeout(() => {
         if (!data.value.length) {
           dispatch(finishSearch(source));
+          dispatch(handleRequest(true));
           return;
         }
         const re = new RegExp(_.escapeRegExp(data.value), "i");

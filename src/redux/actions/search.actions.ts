@@ -1,6 +1,7 @@
 import {
   FINISH_SEARCH,
   START_SEARCH,
+  HANDLE_REQUEST,
 } from "redux/action-types/search.action-types";
 import { MarvelHeroesTypeList } from "types/marvel-heroes.types";
 
@@ -12,5 +13,12 @@ export const finishSearch = (results: MarvelHeroesTypeList) => {
   return {
     type: FINISH_SEARCH,
     payload: results,
+  };
+};
+
+export const handleRequest = (requestState: boolean) => {
+  return {
+    type: HANDLE_REQUEST,
+    payload: requestState,
   };
 };
