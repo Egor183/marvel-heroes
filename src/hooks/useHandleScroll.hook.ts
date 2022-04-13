@@ -10,7 +10,7 @@ export const useHandleScroll = (callback: () => void) => {
 
     const { scrollTop, scrollHeight, clientHeight } = scrollRef.current;
 
-    if (scrollTop + clientHeight !== scrollHeight) {
+    if (scrollTop + clientHeight < scrollHeight) {
       return;
     }
 
