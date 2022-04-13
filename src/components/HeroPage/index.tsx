@@ -1,10 +1,10 @@
 import React, { memo } from "react";
 import { useSelector } from "react-redux";
+import cn from "classnames";
 import MainLayout from "components/MainLayout";
 import Avatar from "components/Avatar";
 import { IMAGE_RESOLUTIONS, IMAGE_SIZES } from "constants/avatar.constants";
 import { NO_DESCRIPTION } from "constants/global.constants";
-import cn from "classnames";
 import { selectMarvelHero } from "redux/selectors/marvel-heroes.selectors";
 import { MarvelHeroPageType } from "types/marvel-heroes.types";
 import { createSrc } from "helpers/avatar.helpers";

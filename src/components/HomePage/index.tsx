@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import Link from "next/link";
 import { selectLoaderState } from "redux/selectors/loader.selectors";
@@ -56,4 +56,4 @@ const Home = () => {
   );
 };
 
-export default memo(Home);
+export default Home;

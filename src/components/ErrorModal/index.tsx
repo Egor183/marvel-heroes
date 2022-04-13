@@ -1,6 +1,6 @@
-import React, { memo } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
-import { Button, Header, Icon, Modal } from "semantic-ui-react";
+import { Header, Icon, Modal } from "semantic-ui-react";
 import { selectErrorState } from "redux/selectors/error.selectors";
 
 import styles from "./styles.module.css";
@@ -23,4 +23,4 @@ const ErrorModal = () => {
   );
 };
 
-export default memo(ErrorModal);
+export default ErrorModal;

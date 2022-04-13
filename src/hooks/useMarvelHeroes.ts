@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { API_METHODS, API_ROUTES } from "constants/api.constants";
 import { loadMarvelHeroes } from "redux/actions/marvel-heroes.actions";
 import { selectMarvelHeroes } from "redux/selectors/marvel-heroes.selectors";
-import { useRequest } from "./useRequest.hook";
 import { selectIsRequestAvailableState } from "redux/selectors/search.selectors";
+import { useRequest } from "./useRequest.hook";
 
 export const useMarvelHeroes = () => {
   const request = useRequest();
