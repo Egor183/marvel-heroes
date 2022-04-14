@@ -6,9 +6,9 @@ import Avatar from "components/Avatar";
 
 import styles from "./styles.module.css";
 
-const Hero: React.FC<MarvelHeroType> = ({ src, name, description }) => {
+const Hero: React.FC<MarvelHeroType> = ({ src, name, description, id }) => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id={id}>
       <div className={styles.imageWrapper}>
         {
           <Avatar

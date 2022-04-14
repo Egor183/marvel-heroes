@@ -2,6 +2,7 @@ export type MarvelHeroType = {
   name: string;
   src: string;
   description: string;
+  id?: string;
 };
 
 export type MarvelHeroRenderItemType = {
