@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { SCROLL_GAP } from "./../constants/global.constants";
 
 export const useHandleScroll = (callback: () => void) => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -10,7 +11,7 @@ export const useHandleScroll = (callback: () => void) => {
 
     const { scrollTop, scrollHeight, clientHeight } = scrollRef.current;
 
-    if (scrollTop + clientHeight < scrollHeight) {
+    if (scrollTop + clientHeight + SCROLL_GAP < scrollHeight) {
       return;
     }
 
