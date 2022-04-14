@@ -36,11 +36,5 @@ export const useMarvelHeroes = () => {
     }
   }, [dispatch, request, marvelHeroes.length, isRequestAvailable]);
 
-  useEffect(() => {
-    (async () => {
-      await getMarvelHeroes();
-    })();
-  }, []);
-
   return { marvelHeroes, getMarvelHeroes };
 };
