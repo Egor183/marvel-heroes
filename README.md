@@ -2,22 +2,18 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Main technologies
 
-React, Redux, Next, Typescript
+React, Redux, Next.js, Typescript
 
 ## How launch
 
 1. git clone
 2. yarn in root folder
+3. yarn dev
 
-## Getting Started
+## Main commands
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
+1. yarn dev - for starting
+2. yarn jest - for testing
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 

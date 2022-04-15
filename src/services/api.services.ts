@@ -5,7 +5,7 @@ import {
   PUBLIC_KEY,
   hash,
   ts,
-} from "./../constants/api.constants";
+} from "constants/api.constants";
 
 const api: AxiosInstance & { [key: string]: any } = axios.create({
   baseURL: API_ROUTES.BASE_URL,

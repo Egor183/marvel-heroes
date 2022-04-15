@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux";
 import { useEffect, useRef } from "react";
 import { setHeroId } from "redux/action-creators/marvel-heroes.action-creators";
-import { MarvelHeroesTypeList } from "./../types/marvel-heroes.types";
-import { SCROLL_GAP } from "./../constants/global.constants";
+import { MarvelHeroesTypeList } from "types/marvel-heroes.types";
+import { SCROLL_GAP } from "constants/global.constants";
 
 export const useHandleScroll = (
   callback: () => void,
