@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { API_METHODS, API_ROUTES } from "constants/api.constants";
-import { loadMarvelHeroes } from "redux/actions/marvel-heroes.actions";
+import { loadMarvelHeroes } from "redux/action-creators/marvel-heroes.action-creators";
 import {
   selectMarvelHeroes,
   selectMarvelHeroId,

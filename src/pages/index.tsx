@@ -3,8 +3,8 @@ import wrapper from "redux/store";
 import Home from "components/HomePage";
 import api from "services/api.services";
 import { API_ROUTES } from "constants/api.constants";
-import { loadMarvelHeroes } from "redux/actions/marvel-heroes.actions";
-import { setError } from "redux/actions/error.actions";
+import { loadMarvelHeroes } from "redux/action-creators/marvel-heroes.action-creators";
+import { setError } from "redux/action-creators/error.action-creators";
 import { selectMarvelHeroes } from "redux/selectors/marvel-heroes.selectors";
 
 const HomePage: NextPage = () => {

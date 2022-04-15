@@ -6,7 +6,7 @@ import {
   finishSearch,
   handleRequest,
   startSearch,
-} from "redux/actions/search.actions";
+} from "redux/action-creators/search.action-creators";
 import { SearchType } from "types/search.types.";
 
 export const useSearch = ({ source, filterField }: SearchType) => {

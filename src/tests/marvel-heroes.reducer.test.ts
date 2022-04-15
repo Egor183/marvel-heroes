@@ -1,5 +1,5 @@
 import { marvelHeroesReducer } from "redux/reducers/marvel-heroes.reducer";
-import { loadMarvelHeroes } from "redux/actions/marvel-heroes.actions";
+import { loadMarvelHeroes } from "redux/action-creators/marvel-heroes.action-creators";
 
 const state = {
   marvelHeroesList: [],

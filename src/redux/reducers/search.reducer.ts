@@ -2,7 +2,7 @@ import {
   FINISH_SEARCH,
   HANDLE_REQUEST,
   START_SEARCH,
-} from "redux/action-types/search.action-types";
+} from "redux/actions/search.actions";
 import { SearchActionType } from "types/redux-actions.types";
 import { InitialStateSearchReducerType } from "types/redux-reducers.types";
 

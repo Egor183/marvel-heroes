@@ -1,4 +1,4 @@
-import { setError } from "redux/actions/error.actions";
+import { setError } from "redux/action-creators/error.action-creators";
 import { errorReducer } from "redux/reducers/error.reducer";
 
 const state = {

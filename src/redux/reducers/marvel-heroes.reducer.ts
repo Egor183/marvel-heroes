@@ -5,7 +5,7 @@ import { MarvelHeroesTypeList } from "types/marvel-heroes.types";
 import {
   LOAD_MARVEL_HEROES,
   SET_HERO_ID,
-} from "../action-types/marvel-heroes.action-types";
+} from "../actions/marvel-heroes.actions";
 
 const initialState: InitialStateMarvelHeroesReducerType = {
   marvelHeroesList: [],

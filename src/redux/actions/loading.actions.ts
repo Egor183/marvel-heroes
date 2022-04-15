@@ -1,5 +1,1 @@
-import { SET_LOADING } from "../action-types/loading.action-types";
-
-export const setLoading = (isLoading: boolean) => {
-  return { type: SET_LOADING, payload: isLoading };
-};
+export const SET_LOADING = "SET_LOADING";

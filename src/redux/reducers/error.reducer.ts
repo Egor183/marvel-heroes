@@ -1,6 +1,6 @@
 import { ErrorActionType } from "types/redux-actions.types";
 import { InitialStateErrorReducerType } from "types/redux-reducers.types";
-import { SET_ERROR } from "../action-types/error.action-types";
+import { SET_ERROR } from "../actions/error.actions";
 
 const initialState: InitialStateErrorReducerType = {
   hasError: false,

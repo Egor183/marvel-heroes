@@ -1,6 +1,6 @@
 import { LoadingActionType } from "types/redux-actions.types";
 import { InitialStateLoadingReducerType } from "types/redux-reducers.types";
-import { SET_LOADING } from "../action-types/loading.action-types";
+import { SET_LOADING } from "../actions/loading.actions";
 
 const initialState: InitialStateLoadingReducerType = {
   isLoading: false,

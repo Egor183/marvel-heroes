@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { useDispatch } from "react-redux";
-import { setLoading } from "redux/actions/loading.actions";
-import { setError } from "redux/actions/error.actions";
+import { setLoading } from "redux/action-creators/loading.action-creators";
+import { setError } from "redux/action-creators/error.action-creators";
 import { API_METHODS } from "constants/api.constants";
 import api from "services/api.services";
 

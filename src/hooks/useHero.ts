@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { setHeroId } from "redux/actions/marvel-heroes.actions";
+import { setHeroId } from "redux/action-creators/marvel-heroes.action-creators";
 
 export const useHero = (id: number) => {
   const dispatch = useDispatch();
