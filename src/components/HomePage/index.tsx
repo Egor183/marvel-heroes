@@ -16,10 +16,13 @@ import Hero from "../Hero";
 import styles from "./styles.module.css";
 
 const Home = () => {
-  const { marvelHeroes, getMarvelHeroes } = useMarvelHeroes();
+  const { marvelHeroes, getMarvelHeroes, heroId } = useMarvelHeroes();
   const isLoading = useSelector(selectLoaderState);
-  const { scrollRef, handleScroll } = useHandleScroll(getMarvelHeroes);
   const { results } = useSelector(selectSearchState);
+  const { scrollRef, handleScroll, scrollElementRef } = useHandleScroll(
+    getMarvelHeroes,
+    results
+  );
 
   return (
     <MainLayout
@@ -37,18 +40,24 @@ const Home = () => {
           className={styles.contentContainer}
         >
           {results.map((item: MarvelHeroRenderItemType) => (
-            <Link passHref href={`/${item.id}`} key={item.id}>
-              <a>
-                <Hero
-                  name={item.name}
-                  description={item.description}
-                  src={createSrc(
-                    item.thumbnail,
-                    IMAGE_RESOLUTIONS.STANDARD_LARGE
-                  )}
-                />
-              </a>
-            </Link>
+            <div
+              ref={item.id === heroId ? scrollElementRef : null}
+              key={item.id}
+            >
+              <Link passHref href={`/${item.id}`} key={item.id}>
+                <a>
+                  <Hero
+                    name={item.name}
+                    description={item.description}
+                    src={createSrc(
+                      item.thumbnail,
+                      IMAGE_RESOLUTIONS.STANDARD_LARGE
+                    )}
+                    id={item.id}
+                  />
+                </a>
+              </Link>
+            </div>
           ))}
         </div>
       )}

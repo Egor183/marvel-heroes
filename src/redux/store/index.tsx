@@ -26,6 +26,8 @@ const rootReducer = (state: RootStateOrAny, action: MainActionType) => {
         state.marvelHeroes.marvelHeroesList;
     }
 
+    nextState.marvelHeroes.heroId = state.marvelHeroes.heroId;
+
     return nextState;
   }
 

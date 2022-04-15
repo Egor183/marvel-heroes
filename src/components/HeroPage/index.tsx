@@ -5,11 +5,14 @@ import MainLayout from "components/MainLayout";
 import List from "components/List";
 import { selectMarvelHero } from "redux/selectors/marvel-heroes.selectors";
 import { MarvelHeroPageType } from "types/marvel-heroes.types";
+import { useHero } from "hooks/useHero";
 
 import styles from "./styles.module.css";
 
 const Hero: React.FC<MarvelHeroPageType> = ({ heroId }) => {
   const hero = useSelector((state) => selectMarvelHero(state, heroId));
+
+  useHero(heroId);
 
   if (!hero) {
     return null;

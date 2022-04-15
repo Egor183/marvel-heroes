@@ -2,7 +2,7 @@ export type MarvelHeroType = {
   name: string;
   src: string;
   description: string;
-  id?: string;
+  id: number;
 };
 
 export type MarvelHeroRenderItemType = {
@@ -13,7 +13,7 @@ export type MarvelHeroRenderItemType = {
 };
 
 export type MarvelHeroPageType = {
-  heroId?: number;
+  heroId: number;
 };
 
 export type MarvelHeroesTypeList = MarvelHeroType[];

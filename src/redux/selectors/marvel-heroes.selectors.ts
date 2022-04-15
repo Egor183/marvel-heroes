@@ -18,3 +18,8 @@ export const selectMarvelHero = createSelector(
     return items.find((item: MarvelHeroRenderItemType) => item.id === heroId);
   }
 );
+
+export const selectMarvelHeroId = createSelector(
+  (state: RootStateOrAny) => state.marvelHeroes.heroId,
+  (heroId) => heroId
+);

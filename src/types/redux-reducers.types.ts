@@ -2,6 +2,7 @@ import { MarvelHeroesTypeList } from "./marvel-heroes.types";
 
 export type InitialStateMarvelHeroesReducerType = {
   marvelHeroesList: MarvelHeroesTypeList | never[];
+  heroId: null | number;
 };
 
 export type InitialStateErrorReducerType = {
