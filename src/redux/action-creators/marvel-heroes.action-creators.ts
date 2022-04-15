@@ -4,7 +4,7 @@ import {
   SET_HERO_ID,
 } from "../actions/marvel-heroes.actions";
 
-export const loadMarvelHeroes = (marvelHeroesList: MarvelHeroesTypeList) => {
+export const setMarvelHeroes = (marvelHeroesList: MarvelHeroesTypeList) => {
   return { type: LOAD_MARVEL_HEROES, payload: marvelHeroesList };
 };
 

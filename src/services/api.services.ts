@@ -1,6 +1,6 @@
 import axios, { AxiosInstance } from "axios";
 import md5 from "md5";
-import { API_ROUTES } from "./../constants/api.constants";
+import { API_METHODS, API_ROUTES } from "./../constants/api.constants";
 
 const PUBLIC_KEY = "85b365e6d886831fb88019651bacabbb";
 const PRIVATE_KEY = "f04c80501d97f04f983e32ca324358a3a08ed191";
@@ -18,4 +18,16 @@ const api: AxiosInstance & { [key: string]: any } = axios.create({
   },
 });
 
-export default api;
+const makeRequest = async (
+  url: string,
+  method: string = API_METHODS.GET,
+  params: { [key: string]: any }
+) => {
+  const data = await api[method](url, {
+    params: { ...params },
+  });
+
+  return data;
+};
+
+export default makeRequest;

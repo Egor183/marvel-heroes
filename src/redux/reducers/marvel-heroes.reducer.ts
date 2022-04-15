@@ -31,10 +31,7 @@ export const marvelHeroesReducer = (
     case LOAD_MARVEL_HEROES:
       return {
         ...state,
-        marvelHeroesList: [
-          ...state.marvelHeroesList,
-          ...(action.payload as MarvelHeroesTypeList),
-        ],
+        marvelHeroesList: [...state.marvelHeroesList, ...action.payload],
       };
 
     case SET_HERO_ID:

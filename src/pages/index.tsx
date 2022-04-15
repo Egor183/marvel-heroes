@@ -1,11 +1,10 @@
 import type { NextPage } from "next";
 import wrapper from "redux/store";
-import Home from "components/HomePage";
-import api from "services/api.services";
-import { API_ROUTES } from "constants/api.constants";
-import { loadMarvelHeroes } from "redux/action-creators/marvel-heroes.action-creators";
 import { setError } from "redux/action-creators/error.action-creators";
 import { selectMarvelHeroes } from "redux/selectors/marvel-heroes.selectors";
+import { loadMarvelHeroes } from "redux/thunk-creators/marvel-heroes.thunk-creators";
+import { MarvelHeroesActionType } from "types/redux-actions.types";
+import Home from "components/HomePage";
 
 const HomePage: NextPage = () => {
   return <Home />;
@@ -21,16 +20,7 @@ export const getServerSideProps = wrapper.getServerSideProps(
           return { props: {} };
         }
 
-        const data = await api.get(API_ROUTES.MARVEL_HEROES, {
-          params: { offset: marvelHeroes.length },
-        });
-        const result = data?.data?.data?.results;
-
-        if (!result) {
-          return { props: {} };
-        }
-
-        dispatch(loadMarvelHeroes(result));
+        await dispatch(loadMarvelHeroes() as unknown as MarvelHeroesActionType);
       } catch (e) {
         dispatch(setError(true));
       } finally {
