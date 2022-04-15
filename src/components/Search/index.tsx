@@ -1,5 +1,4 @@
-import React, { memo, useCallback, useEffect, useRef } from "react";
-import _ from "lodash";
+import React, { memo } from "react";
 import { Search as SearchComponent } from "semantic-ui-react";
 import { SearchType } from "types/search.types.";
 import { useSearch } from "hooks/useSearch";

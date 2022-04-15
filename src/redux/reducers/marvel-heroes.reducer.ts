@@ -1,7 +1,6 @@
 import { HYDRATE } from "next-redux-wrapper";
 import { MarvelHeroesActionType } from "types/redux-actions.types";
 import { InitialStateMarvelHeroesReducerType } from "types/redux-reducers.types";
-import { MarvelHeroesTypeList } from "types/marvel-heroes.types";
 import {
   LOAD_MARVEL_HEROES,
   SET_HERO_ID,
