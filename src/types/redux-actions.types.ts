@@ -6,7 +6,7 @@ type BasicActionType<T> = {
   payload: T;
 };
 
-export type ErrorActionType = BasicActionType<boolean>;
+export type ErrorActionType = BasicActionType<boolean | RootStateOrAny>;
 
 export type LoadingActionType = BasicActionType<boolean>;
 

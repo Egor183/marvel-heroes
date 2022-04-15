@@ -1,15 +1,14 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import { Header, Icon, Modal } from "semantic-ui-react";
-import { selectErrorState } from "redux/selectors/error.selectors";
+import { useError } from "hooks/useError.hook";
 
 import styles from "./styles.module.css";
 
 const ErrorModal = () => {
-  const hasError = useSelector(selectErrorState);
+  const isOpen = useError();
 
   return (
-    <Modal basic open={hasError} size="small">
+    <Modal basic open={isOpen} size="small">
       <Header icon>
         <Icon name="exclamation triangle" />
         <h1>Something went wrong ...</h1>
