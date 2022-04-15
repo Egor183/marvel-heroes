@@ -7,35 +7,15 @@ import { loadingReducer } from "../reducers/loading.reducer";
 import { errorReducer } from "../reducers/error.reducer";
 import { searchReducer } from "../reducers/search.reducer";
 
-const combinedReducer = combineReducers({
+const rootReducer = combineReducers({
   marvelHeroes: marvelHeroesReducer,
   loading: loadingReducer,
   error: errorReducer,
   search: searchReducer,
 });
 
-const rootReducer = (state: RootStateOrAny, action: MainActionType) => {
-  if (action.type === HYDRATE) {
-    const nextState = {
-      ...state,
-      ...action.payload,
-    };
-
-    if (state.marvelHeroes.marvelHeroesList.length) {
-      nextState.marvelHeroes.marvelHeroesList =
-        state.marvelHeroes.marvelHeroesList;
-    }
-
-    nextState.marvelHeroes.heroId = state.marvelHeroes.heroId;
-
-    return nextState;
-  }
-
-  return combinedReducer(state, action);
-};
-
 const store = createStore(rootReducer);
-
 const makeStore: MakeStore<typeof store> = () => store;
+type AppStore = ReturnType<typeof makeStore>;
 
-export default createWrapper(makeStore);
+export default createWrapper<AppStore>(makeStore);

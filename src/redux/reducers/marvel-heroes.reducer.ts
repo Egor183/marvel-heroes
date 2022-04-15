@@ -1,5 +1,7 @@
+import { HYDRATE } from "next-redux-wrapper";
 import { MarvelHeroesActionType } from "types/redux-actions.types";
 import { InitialStateMarvelHeroesReducerType } from "types/redux-reducers.types";
+import { MarvelHeroesTypeList } from "types/marvel-heroes.types";
 import {
   LOAD_MARVEL_HEROES,
   SET_HERO_ID,
@@ -15,10 +17,24 @@ export const marvelHeroesReducer = (
   action: MarvelHeroesActionType
 ) => {
   switch (action.type) {
+    case HYDRATE:
+      return {
+        ...state,
+        marvelHeroesList: state.marvelHeroesList.length
+          ? state.marvelHeroesList
+          : [
+              ...state.marvelHeroesList,
+              ...action.payload.marvelHeroes.marvelHeroesList,
+            ],
+      };
+
     case LOAD_MARVEL_HEROES:
       return {
         ...state,
-        marvelHeroesList: [...state.marvelHeroesList, ...action.payload],
+        marvelHeroesList: [
+          ...state.marvelHeroesList,
+          ...(action.payload as MarvelHeroesTypeList),
+        ],
       };
 
     case SET_HERO_ID:

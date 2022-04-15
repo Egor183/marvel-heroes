@@ -1,3 +1,4 @@
+import { RootStateOrAny } from "react-redux";
 import { MarvelHeroesTypeList } from "./marvel-heroes.types";
 
 type BasicActionType<T> = {
@@ -9,7 +10,9 @@ export type ErrorActionType = BasicActionType<boolean>;
 
 export type LoadingActionType = BasicActionType<boolean>;
 
-export type MarvelHeroesActionType = BasicActionType<MarvelHeroesTypeList>;
+export type MarvelHeroesActionType = BasicActionType<
+  MarvelHeroesTypeList | number | null | RootStateOrAny
+>;
 
 export type SearchActionType = BasicActionType<string | MarvelHeroesTypeList>;
 
