@@ -5,15 +5,15 @@
 }
 
 .headerContainer {
-  height: 10vh;
+  height: 12vh;
 }
 
 .mainContainer {
-  height: 90vh;
+  height: 88vh;
 }
 
 .padding {
-  padding: 15px;
+  padding: 15px 15px 0 15px;
 }
 
 .header {
@@ -30,28 +30,60 @@
   align-items: center;
 }
 
-@media (max-width: 400px) {
-  .header {
-    font-size: 18px;
-  }
-}
-
-@media (max-height: 740px) {
-  .headerContainer {
-    height: 12vh;
-  }
-
-  .mainContainer {
-    height: 88vh;
-  }
-}
-
-@media (max-height: 650px) {
+@media (max-height: 850px) {
   .headerContainer {
     height: 15vh;
   }
 
   .mainContainer {
     height: 85vh;
+  }
+}
+
+@media (max-height: 750px) {
+  .headerContainer {
+    height: 17vh;
+  }
+
+  .mainContainer {
+    height: 83vh;
+  }
+}
+
+@media (max-height: 650px) {
+  .headerContainer {
+    height: 20vh;
+  }
+
+  .mainContainer {
+    height: 80vh;
+  }
+}
+
+@media (max-height: 550px) {
+  .headerContainer {
+    height: 23vh;
+  }
+
+  .mainContainer {
+    height: 77vh;
+  }
+
+  .header {
+    font-size: 24px;
+  }
+}
+
+@media (max-height: 450px) {
+  .headerContainer {
+    height: 26vh;
+  }
+
+  .mainContainer {
+    height: 74vh;
+  }
+
+  .header {
+    font-size: 22px;
   }
 }

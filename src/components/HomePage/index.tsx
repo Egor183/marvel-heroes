@@ -39,26 +39,30 @@ const Home = () => {
           onScroll={handleScroll}
           className={styles.contentContainer}
         >
-          {results.map((item: MarvelHeroRenderItemType) => (
-            <div
-              ref={item.id === heroId ? scrollElementRef : null}
-              key={item.id}
-            >
-              <Link passHref href={`/${item.id}`} key={item.id}>
-                <a>
-                  <Hero
-                    name={item.name}
-                    description={item.description}
-                    src={createSrc(
-                      item.thumbnail,
-                      IMAGE_RESOLUTIONS.STANDARD_LARGE
-                    )}
-                    id={item.id}
-                  />
-                </a>
-              </Link>
-            </div>
-          ))}
+          {results.length ? (
+            results.map((item: MarvelHeroRenderItemType) => (
+              <div
+                ref={item.id === heroId ? scrollElementRef : null}
+                key={item.id}
+              >
+                <Link passHref href={`/${item.id}`} key={item.id}>
+                  <a>
+                    <Hero
+                      name={item.name}
+                      description={item.description}
+                      src={createSrc(
+                        item.thumbnail,
+                        IMAGE_RESOLUTIONS.STANDARD_LARGE
+                      )}
+                      id={item.id}
+                    />
+                  </a>
+                </Link>
+              </div>
+            ))
+          ) : (
+            <p className={styles.noHero}>looks like there are no heroes...</p>
+          )}
         </div>
       )}
     </MainLayout>

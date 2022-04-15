@@ -10,3 +10,14 @@
   overflow-y: auto;
   height: 100%;
 }
+
+.noHero {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+@media (max-width: 400px) {
+  .noHero {
+    font-size: 14px;
+  }
+}
